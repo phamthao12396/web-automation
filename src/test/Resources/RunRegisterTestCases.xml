@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="false" name="Register">
+    <test name="Run Register TestCases">
+        <parameter name="browser" value="chrome" />
+        <parameter name="url" value="https://development.d3m8y0cf0nidug.amplifyapp.com/auth/signup" />
+        <parameter name="countryName" value="Adu Habi"/>
+        <classes>
+            <class name ="com.adm.RegisterTestcases" />
+        </classes>
+    </test>
+</suite>
