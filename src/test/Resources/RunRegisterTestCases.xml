@@ -2,17 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite parallel="false" name="Register">
 
-    <parameter name="browser" value="chrome" />
-    <parameter name="url" value="https://development.d3m8y0cf0nidug.amplifyapp.com/auth/signup" />
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://development.d3m8y0cf0nidug.amplifyapp.com/auth/signup"/>
 
     <test name="Run Register TestCases">
-        <parameter name="countryName" value="Adu Habi"/>
+        <parameter name="countryName" value="AbuDhabi"/>
         <classes>
-            <class name ="com.adm.RegisterTestcases" />
-            <methods>
-                <include name="fillFormWithInvalidEmail">
-                </include>
-            </methods>
+            <class name="com.adm.RegisterTestcases">
+                <methods>
+                    <include name="fillFormWithInvalidEmail"/>
+                </methods>
+            </class>
         </classes>
     </test>
 
