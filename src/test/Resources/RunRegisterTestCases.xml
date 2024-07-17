@@ -4,6 +4,7 @@
 
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://development.d3m8y0cf0nidug.amplifyapp.com/auth/signup"/>
+    <parameter name="timeout" value="30"/>
 
     <test name="Run Register TestCases">
         <parameter name="countryName" value="AbuDhabi"/>
