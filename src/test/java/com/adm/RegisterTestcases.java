@@ -1,27 +1,28 @@
 package com.adm;
 
-import commons.BaseTest;
+import Utils.SeleniumBaseTest;
 import commons.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import pageObjects.RegisterPageObject;
 
-public class RegisterTestcases extends BaseTest {
-    WebDriver driver;
+import java.util.logging.Logger;
+
+public class RegisterTestcases extends SeleniumBaseTest {
     RegisterPageObject registerPageObject;
 
-    @Parameters({"browser", "url"})
+
+
     @BeforeTest()
-    public void beforeClass(String browserName, String url) {
-        driver = getBrowserDriver(browserName, url);
-        registerPageObject = PageGeneratorManager.getRegisterPageObject(driver);
+    public void beforeTest() {
+        registerPageObject = new RegisterPageObject(driver);
     }
 
     @Test
     @Parameters({"countryName"})
     public void fillFormWithInvalidEmail(String countryName) {
-        logger.info("Step 1: select DropDown Country, {}", countryName);
+        logger.info("Step 1: select DropDown Country, " + countryName);
         registerPageObject.selectCountry(countryName);
     }
 
@@ -32,7 +33,6 @@ public class RegisterTestcases extends BaseTest {
     }
 
     @AfterTest
-    public void afterClass() {
-        driver.quit();
+    public void afterTest() {
     }
 }
