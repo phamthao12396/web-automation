@@ -41,9 +41,9 @@ public class SeleniumBaseTest extends CommonBaseTest{
         logger = Logger.getLogger(this.getClass().getName() + "],[" + driver);
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     @Parameters({"browser", "url", "timeout"})
-    public void setUp(String browserDriver, String url, int timeout) throws InterruptedException, MalformedURLException {
+    public void setUp(String browserDriver, String url, int timeout) {
         driver = new ChromeDriver();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
@@ -65,7 +65,7 @@ public class SeleniumBaseTest extends CommonBaseTest{
         webElementLocator = new WebElementLocator(driver);
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         driver.quit();
     }

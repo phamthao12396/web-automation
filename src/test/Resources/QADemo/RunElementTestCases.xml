@@ -11,7 +11,7 @@
         <classes>
             <class name="com.QADemo.ElementTestcases">
                 <methods>
-                    <include name="fillTextBox"/>
+                    <include name="textBox"/>
                 </methods>
             </class>
         </classes>

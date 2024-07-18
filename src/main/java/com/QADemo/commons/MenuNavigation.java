@@ -15,9 +15,13 @@ public class MenuNavigation {
         this.driver = driver;
     }
 
-    public void navigateToUrl(URL url){
+    public void navigateToUrl(String url){
         logger.info("Navigate to URL "+ url);
-        driver.get(url.toString());
+        driver.get(url);
     }
 
+    public void navigateToElement(){
+        logger.info("Navigate to QADemo - Element");
+        navigateToUrl(Constant.QADEMO_URL + "elements");
+    }
 }

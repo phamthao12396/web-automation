@@ -1,4 +1,5 @@
 package com.QADemo.commons;
 
-public enum Constant {
+public class Constant {
+    public static final String QADEMO_URL = "https://demoqa.com/";
 }
