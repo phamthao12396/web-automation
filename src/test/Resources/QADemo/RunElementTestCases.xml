@@ -3,15 +3,15 @@
 <suite parallel="false" name="Register">
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="https://development.d3m8y0cf0nidug.amplifyapp.com/auth/signup"/>
+    <parameter name="url" value="https://demoqa.com/"/>
     <parameter name="timeout" value="30"/>
 
     <test name="Run Register TestCases">
         <parameter name="countryName" value="AbuDhabi"/>
         <classes>
-            <class name="com.adm.RegisterTestcases">
+            <class name="com.QADemo.ElementTestcases">
                 <methods>
-                    <include name="fillFormWithInvalidEmail"/>
+                    <include name="fillTextBox"/>
                 </methods>
             </class>
         </classes>

@@ -1,4 +1,4 @@
-package Selenium;
+package com.QADemo.Selenium;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -25,6 +25,12 @@ public class CheckboxElement {
         webElementInteractions.clickOnElement(element);
     }
 
+    /**
+     * this method return true/ false if element checked or not
+     *
+     * @param element
+     * @return true if selected/ false if not
+     */
     public boolean isSelected(WebElement element) {
         return element.isSelected();
     }

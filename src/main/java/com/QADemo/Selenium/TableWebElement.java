@@ -1,4 +1,4 @@
-package Selenium;
+package com.QADemo.Selenium;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
