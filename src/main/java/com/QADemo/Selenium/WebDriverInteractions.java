@@ -1,6 +1,8 @@
 package com.QADemo.Selenium;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverInteractions {
@@ -45,5 +47,20 @@ public class WebDriverInteractions {
 
     public void maximizeWindow(){
         driver.manage().window().maximize();
+    }
+
+    public Object executeScript(String script, WebElement element){
+        return driver.executeScript(script, element);
+    }
+
+    public void scrollToElement(WebElement element){
+        executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void scrollToTop(){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+    }
+    public void scrollToBottom(){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
 }

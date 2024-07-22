@@ -12,6 +12,10 @@
             <class name="com.QADemo.ElementTestcases">
                 <methods>
                     <include name="textBox"/>
+                        <parameter name="fullName" value="Name A"/>
+                        <parameter name="email" value="mrsA@kim.vn"/>
+                        <parameter name="currentAddress" value="103 Nguyen The Truyen"/>
+                        <parameter name="permanentAddress" value="12 Tan son nhi"/>
                 </methods>
             </class>
         </classes>

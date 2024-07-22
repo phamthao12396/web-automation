@@ -27,6 +27,9 @@ public class ElementPageUIs {
     public WebElement textBoxById(String id){
         return webElementLocator.findElementByXpath("//Form[@id='userForm']//input[@id='"+id+"']");
     }
+    public WebElement textareaById(String id){
+        return webElementLocator.findElementByXpath("//Form[@id='userForm']//textarea[@id='"+id+"']");
+    }
 
     public WebElement submitButton(){
         return webElementLocator.findElementByXpath("//Form[@id='userForm']//button[@id='submit']");
