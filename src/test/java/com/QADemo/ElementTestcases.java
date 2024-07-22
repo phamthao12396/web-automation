@@ -9,6 +9,7 @@ public class ElementTestcases  extends SeleniumBaseTest {
     ElementPageObject elementPageObject;
     MenuNavigation navigation;
     public static final String TEXTBOX_TAB = "Text Box";
+    public static final String CHECKBOX_TAB = "Check Box";
 
 
     @BeforeMethod
@@ -39,7 +40,20 @@ public class ElementTestcases  extends SeleniumBaseTest {
 
     @Test
     public void checkbox() {
+        logger.info("Step 1.1: click To "+CHECKBOX_TAB);
+        elementPageObject.clickToMenuByName(CHECKBOX_TAB);
 
+        logger.info("Step 1.2: verify CheckBox title display");
+        elementPageObject.verifyPageTitleDisplayed(CHECKBOX_TAB);
+
+        logger.info("Step 2: Click to expanse icon");
+        elementPageObject.sendKeysToForm(name, email, currentAddress, permanentAddress);
+
+        logger.info("Step 3: click to single checkbox");
+        elementPageObject.clickSubmitButton();
+
+        logger.info("Step 4: Verify data displayed match with checkbox checked");
+        elementPageObject.verifyDataDisplayedMatchWithGivenData(name, email, currentAddress, permanentAddress);
     }
 
     @AfterTest
