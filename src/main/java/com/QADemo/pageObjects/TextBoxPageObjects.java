@@ -3,21 +3,21 @@ package com.QADemo.pageObjects;
 import com.QADemo.Selenium.TextInputElement;
 import com.QADemo.Selenium.WebDriverInteractions;
 import com.QADemo.Selenium.WebElementInteractions;
-import com.QADemo.pageUIs.ElementPageUIs;
+import com.QADemo.pageUIs.TextBoxPageUIs;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class ElementPageObject {
+public class TextBoxPageObjects {
     private static final Logger logger = Logger.getLogger(WebElementInteractions.class);
     private WebElementInteractions webElementInteractions;
-    private ElementPageUIs elementPageUIs;
+    private TextBoxPageUIs elementPageUIs;
     private TextInputElement textInputElement;
     private WebDriverInteractions webDriverInteractions;
-    public ElementPageObject(RemoteWebDriver driver, WebDriverWait wait){
+    public TextBoxPageObjects(RemoteWebDriver driver, WebDriverWait wait){
         webElementInteractions= new WebElementInteractions(driver, wait);
-        elementPageUIs = new ElementPageUIs(driver, wait);
+        elementPageUIs = new TextBoxPageUIs(driver, wait);
         textInputElement= new TextInputElement(driver, wait);
         webDriverInteractions = new WebDriverInteractions(driver);
     }

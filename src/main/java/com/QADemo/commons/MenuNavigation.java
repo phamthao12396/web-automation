@@ -24,4 +24,14 @@ public class MenuNavigation {
         logger.info("Navigate to QADemo - Element");
         navigateToUrl(Constant.QADEMO_URL + "elements");
     }
+
+    public void navigateToForms(){
+        logger.info("Navigate to QADemo - Forms");
+        navigateToUrl(Constant.QADEMO_URL + "forms");
+    }
+
+    public void navigateToAlertsWindows(){
+        logger.info("Navigate to QADemo - Alerts, Frame & Windows");
+        navigateToUrl(Constant.QADEMO_URL + "alertsWindows");
+    }
 }

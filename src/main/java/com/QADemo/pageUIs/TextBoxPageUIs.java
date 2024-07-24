@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ElementPageUIs {
+public class TextBoxPageUIs {
     private WebElementLocator webElementLocator;
     private WebElementWaits webElementWaits;
     private WebElementInteractions webElementInteractions;
-    public ElementPageUIs(RemoteWebDriver driver, WebDriverWait wait){
+    public TextBoxPageUIs(RemoteWebDriver driver, WebDriverWait wait){
         webElementLocator = new WebElementLocator(driver);
         webElementWaits = new WebElementWaits(wait);
         webElementInteractions = new WebElementInteractions(driver, wait);
