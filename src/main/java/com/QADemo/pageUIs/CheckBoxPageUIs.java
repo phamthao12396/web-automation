@@ -24,4 +24,12 @@ public class CheckBoxPageUIs {
     public  WebElement expandByCheckBoxText(String checkboxName){
         return webElementLocator.findElementByXpath("//span[@class='rct-title' and text()='"+checkboxName+"']//parent::label//preceding::button[@title='Toggle']");
     }
+
+    public WebElement checkBoxByName(String checkboxName){
+        return webElementLocator.findElementByXpath("//span[@class='rct-checkbox'][following-sibling::span[text()='"+checkboxName+"']]");
+    }
+
+    public String selectedResult(){
+        return webElementInteractions.getTextFromWebElement(webElementLocator.findElementByXpath("//div[@id='result']/span[@class='text-success']"));
+    }
 }
