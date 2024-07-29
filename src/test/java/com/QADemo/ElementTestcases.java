@@ -4,6 +4,7 @@ import Utils.SeleniumBaseTest;
 import com.QADemo.commons.MenuNavigation;
 import com.QADemo.commons.PageGeneratorManager;
 import com.QADemo.pageObjects.CheckBoxPageObjects;
+import com.QADemo.pageObjects.RadioPageObjects;
 import org.testng.annotations.*;
 import com.QADemo.pageObjects.TextBoxPageObjects;
 
@@ -22,7 +23,7 @@ public class ElementTestcases  extends SeleniumBaseTest {
     @Parameters({"fullName", "email", "currentAddress", "permanentAddress"})
     public void textBox(String name, String email, String currentAddress, String permanentAddress) {
         logger.info("Step 1.1: click To TextBox tab");
-        textBoxPageObject.clickToTextBoxTab();
+        textBoxPageObject.clickToTabByTabName("TextBox");
 
         logger.info("Step 1.2: verify TextBox title display");
         textBoxPageObject.verifyPageTitleDisplayed();
@@ -38,7 +39,8 @@ public class ElementTestcases  extends SeleniumBaseTest {
     }
 
     @Test
-    public void clickToCheckBox() {
+    @Parameters("checkboxName")
+    public void clickToCheckBox(String checkboxName) {
         logger.info("Step 1.1: click To Check Box tab");
         CheckBoxPageObjects checkBoxPageObjects =  textBoxPageObject.clickToCheckBoxTab();
 
@@ -48,20 +50,28 @@ public class ElementTestcases  extends SeleniumBaseTest {
         logger.info("Step 2: Click to Home expand icon");
         checkBoxPageObjects.clickToExpenseIcon();
 
-        logger.info("Step 3: Click to Documents expand icon");
-        checkBoxPageObjects.clickToExpenseIcon();
+        logger.info("Step 3: Verify Checkbox Private display");
+        checkBoxPageObjects.verifyCheckBoxDisplayed(checkboxName);
 
-        logger.info("Step 4: Click to Office expand icon");
-        checkBoxPageObjects.clickToExpenseIcon();
+        logger.info("Step 4: click to single checkbox");
+        checkBoxPageObjects.checkToSingleCheckbox(checkboxName);
 
-        logger.info("Step 5: click to single checkbox");
-        checkBoxPageObjects.checkToSingleCheckbox("Private");
+        logger.info("Step 5: Verify data displayed match with checkbox checked");
+        checkBoxPageObjects.verifyDataDisplayedMatchWithCheckBoxName(checkboxName);
+    }
 
-        logger.info("Step 6: Verify checkbox is selected");
-        checkBoxPageObjects.verifyCheckBoxIsSelected("Private");
+    @Test
+    @Parameters("radioName")
+    public void radioButton(String radioName) {
+        logger.info("Step 1.1: click To Radio Button tab");
+        textBoxPageObject.clickToTabByTabName("Radio Button");
+        RadioPageObjects radioPageObjects = PageGeneratorManager.getRadioButtonPageObjects(driver, wait);
 
-        logger.info("Step 7: Verify data displayed match with checkbox checked");
-        checkBoxPageObjects.verifyDataDisplayedMatchWithCheckBoxName("Private");
+        logger.info("Step 2: Click to "+radioName+" button");
+        radioPageObjects.clickToRadioButtonByName(radioName);
+
+        logger.info("Step 3: Verify the text result displayed match with the Radio selected");
+        radioPageObjects.verifyTheTextDisplayedMatchWithRadioButtonSelected(radioName);
     }
 
     @AfterTest

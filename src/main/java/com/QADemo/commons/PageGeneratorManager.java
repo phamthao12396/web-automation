@@ -2,6 +2,7 @@ package com.QADemo.commons;
 
 import com.QADemo.Selenium.WebElementWaits;
 import com.QADemo.pageObjects.CheckBoxPageObjects;
+import com.QADemo.pageObjects.RadioPageObjects;
 import com.QADemo.pageObjects.TextBoxPageObjects;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,5 +20,9 @@ public class PageGeneratorManager {
     }
     public static CheckBoxPageObjects getCheckBoxPageObjects(RemoteWebDriver driver, WebDriverWait wait){
         return new CheckBoxPageObjects(driver, wait);
+    }
+
+    public static RadioPageObjects getRadioButtonPageObjects(RemoteWebDriver driver, WebDriverWait wait){
+        return  new RadioPageObjects(driver, wait);
     }
 }

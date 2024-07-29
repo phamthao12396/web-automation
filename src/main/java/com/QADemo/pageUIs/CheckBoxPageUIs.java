@@ -17,19 +17,15 @@ public class CheckBoxPageUIs {
         webElementInteractions = new WebElementInteractions(driver, wait);
     }
 
-    public WebElement homeExpanseIcon(){
-        return webElementLocator.findElementByXpath("//button[@title='Toggle']");
-    }
-
-    public  WebElement expandByCheckBoxText(String checkboxName){
-        return webElementLocator.findElementByXpath("//span[@class='rct-title' and text()='"+checkboxName+"']//parent::label//preceding::button[@title='Toggle']");
+    public WebElement expandButton() {
+        return webElementWaits.waitForElementClickableByXpath("//div[@id='tree-node']//button[@title='Expand all']");
     }
 
     public WebElement checkBoxByName(String checkboxName){
-        return webElementLocator.findElementByXpath("//span[@class='rct-checkbox'][following-sibling::span[text()='"+checkboxName+"']]");
+        return webElementWaits.waitForElementClickableByXpath("//span[@class='rct-checkbox'][following-sibling::span[text()='"+checkboxName+"']]");
     }
 
     public String selectedResult(){
-        return webElementInteractions.getTextFromWebElement(webElementLocator.findElementByXpath("//div[@id='result']/span[@class='text-success']"));
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@id='result']/span[@class='text-success']"));
     }
 }

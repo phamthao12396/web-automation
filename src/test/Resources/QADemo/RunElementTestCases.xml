@@ -6,8 +6,7 @@
     <parameter name="url" value="https://demoqa.com/"/>
     <parameter name="timeout" value="30"/>
 
-    <test name="Run Register TestCases">
-        <parameter name="countryName" value="AbuDhabi"/>
+<!--    <test name="Input TextBox">
         <classes>
             <class name="com.QADemo.ElementTestcases">
                 <methods>
@@ -16,6 +15,28 @@
                         <parameter name="email" value="mrsA@kim.vn"/>
                         <parameter name="currentAddress" value="103 Nguyen The Truyen"/>
                         <parameter name="permanentAddress" value="12 Tan son nhi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+<!--    <test name="Select Checkbox">
+        <classes>
+            <class name="com.QADemo.ElementTestcases">
+                <methods>
+                    <include name="clickToCheckBox"/>
+                    <parameter name="checkboxName" value="Private" />
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <test name="Select Radio button">
+        <classes>
+            <class name="com.QADemo.ElementTestcases">
+                <methods>
+                    <include name="radioButton"/>
+                    <parameter name="radioName" value="Yes" />
                 </methods>
             </class>
         </classes>

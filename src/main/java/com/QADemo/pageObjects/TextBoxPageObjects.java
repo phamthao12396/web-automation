@@ -28,8 +28,8 @@ public class TextBoxPageObjects {
         webDriverInteractions = new WebDriverInteractions(driver);
     }
 
-    public void clickToTextBoxTab(){
-        webElementInteractions.clickOnElement(textBoxPageUIs.menuTabByName(TEXTBOX_TAB));
+    public void clickToTabByTabName(String tabName){
+        webElementInteractions.clickOnElement(textBoxPageUIs.menuTabByName(tabName));
     }
 
     public CheckBoxPageObjects clickToCheckBoxTab(){
