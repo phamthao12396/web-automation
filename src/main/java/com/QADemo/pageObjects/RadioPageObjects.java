@@ -15,6 +15,7 @@ public class RadioPageObjects {
     public RadioPageObjects(RemoteWebDriver driver, WebDriverWait wait){
         this.driver = driver;
         webElementInteractions = new WebElementInteractions(driver,wait);
+        webDriverInteractions = new WebDriverInteractions(driver);
         radioPageUIs = new RadioPageUIs(driver, wait);
     }
 

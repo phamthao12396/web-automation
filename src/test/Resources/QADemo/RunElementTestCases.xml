@@ -36,7 +36,7 @@
             <class name="com.QADemo.ElementTestcases">
                 <methods>
                     <include name="radioButton"/>
-                    <parameter name="radioName" value="Yes" />
+                    <parameter name="radioName" value="Impressive" />
                 </methods>
             </class>
         </classes>

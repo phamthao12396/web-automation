@@ -74,6 +74,32 @@ public class ElementTestcases  extends SeleniumBaseTest {
         radioPageObjects.verifyTheTextDisplayedMatchWithRadioButtonSelected(radioName);
     }
 
+    @Test
+    @Parameters("radioName")
+    public void addNewRecordToTable(String radioName) {
+        logger.info("Step 1.1: click To Radio Button tab");
+        textBoxPageObject.clickToTabByTabName("Radio Button");
+        RadioPageObjects radioPageObjects = PageGeneratorManager.getRadioButtonPageObjects(driver, wait);
+
+        logger.info("Step 2: Click to "+radioName+" button");
+        radioPageObjects.clickToRadioButtonByName(radioName);
+
+        logger.info("Step 3: Verify the text result displayed match with the Radio selected");
+        radioPageObjects.verifyTheTextDisplayedMatchWithRadioButtonSelected(radioName);
+    }
+
+    @Test
+    @Parameters("radioName")
+    public void editRecord(String radioName){
+
+    }
+
+    @Test
+    @Parameters("radioName")
+    public void deleteRecord(String radioName){
+
+    }
+
     @AfterTest
     public void afterTest() {
     }
