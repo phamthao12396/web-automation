@@ -18,4 +18,8 @@ public class WebElementLocator {
     public WebElement findElementByXpath(String xpath) {
         return driver.findElement(By.xpath(xpath));
     }
+
+    public  WebElement findElementById(String id){
+        return  driver.findElement(By.id(id));
+    }
 }
