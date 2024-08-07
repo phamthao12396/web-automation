@@ -24,5 +24,35 @@ public class WebTablesPageUIs {
         return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='modal-header']/div"));
     }
 
-    public WebElement
+    public WebElement firstNameTBx(){
+        return webElementLocator.findElementById("firstName");
+    }
+
+    public WebElement lastNameTbx(){
+        return webElementLocator.findElementById("lastName");
+    }
+
+    public WebElement emailTBx(){
+        return  webElementLocator.findElementById("userEmail");
+    }
+
+    public WebElement ageTBx(){
+        return webElementLocator.findElementById("age");
+    }
+
+    public  WebElement salaryTBx(){
+        return webElementLocator.findElementById("salary");
+    }
+
+    public WebElement departmentTBx(){
+        return  webElementLocator.findElementById("department");
+    }
+
+    public WebElement submitBtn(){
+        return webElementLocator.findElementById("submit");
+    }
+
+    public WebElement searchTBx(){
+        return webElementWaits.waitForElementVisibleById("searchBox");
+    }
 }

@@ -75,8 +75,8 @@ public class ElementTestcases  extends SeleniumBaseTest {
         radioPageObjects.verifyTheTextDisplayedMatchWithRadioButtonSelected(radioName);
     }
 
-    @Test
-    public void addNewRecordToTable() {
+    @Test(dataProvider = "addNewRecord", dataProviderClass = WebTablesPageObjects.class)
+    public void addNewRecordToTable(String firstName, String lastName, String email, String age, String salary, String department) {
         logger.info("Step 1: click To Web Table tab");
         textBoxPageObject.clickToTabByTabName("Web Tables");
         WebTablesPageObjects webTablesPageObjects = PageGeneratorManager.getWebTablesPageObjects(driver, wait);
@@ -88,7 +88,7 @@ public class ElementTestcases  extends SeleniumBaseTest {
         webTablesPageObjects.verifyRegistrationFormDisplayed();
 
         logger.info("Step 4: Enter data to all field");
-        webTablesPageObjects.enterDataToRegistrationForm();
+        webTablesPageObjects.enterDataToRegistrationForm(firstName, lastName, email, age, salary, department);
 
         logger.info("Step 5: Click to Submit button");
         webTablesPageObjects.clickSubmitBtn();
