@@ -55,4 +55,37 @@ public class WebTablesPageUIs {
     public WebElement searchTBx(){
         return webElementWaits.waitForElementVisibleById("searchBox");
     }
+
+    public String fisrtNameTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[1]"));
+    }
+
+    public String lastNameTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[2]"));
+    }
+
+    public String ageTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[3]"));
+    }
+
+    public String emailTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[4]"));
+    }
+
+    public String salaryTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[5]"));
+    }
+
+    public String departmentTxt(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']/div[6]"));
+    }
+
+    public WebElement editRecordBtn(){
+        return webElementWaits.waitForElementClickableByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']//div[@class='action-buttons']/span[@title='Edit']");
+    }
+
+
+    public WebElement deleteRecordBtn(){
+        return webElementWaits.waitForElementClickableByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']//div[@class='action-buttons']/span[@title='Delete']");
+    }
 }

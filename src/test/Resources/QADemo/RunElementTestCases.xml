@@ -31,12 +31,23 @@
         </classes>
     </test>-->
 
+<!--    <test name="Select Radio button">-->
+<!--        <classes>-->
+<!--            <class name="com.QADemo.ElementTestcases">-->
+<!--                <methods>-->
+<!--                    <include name="radioButton"/>-->
+<!--                    <parameter name="radioName" value="Impressive" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    -->
+
     <test name="Select Radio button">
         <classes>
             <class name="com.QADemo.ElementTestcases">
                 <methods>
-                    <include name="radioButton"/>
-                    <parameter name="radioName" value="Impressive" />
+                    <include name="addNewRecordToTable"/>
                 </methods>
             </class>
         </classes>

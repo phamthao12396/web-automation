@@ -12,11 +12,13 @@ import com.QADemo.pageObjects.TextBoxPageObjects;
 public class ElementTestcases  extends SeleniumBaseTest {
     TextBoxPageObjects textBoxPageObject;
     MenuNavigation navigation;
+    private WebTablesPageObjects webTablesPageObjects;
 
     @BeforeMethod
     public void prepareMethod() {
         navigation = new MenuNavigation(driver);
         textBoxPageObject = PageGeneratorManager.getTextBoxPageObjects(driver, wait);
+        webTablesPageObjects = new WebTablesPageObjects(driver, wait);
         navigation.navigateToElement();
     }
 
@@ -79,7 +81,6 @@ public class ElementTestcases  extends SeleniumBaseTest {
     public void addNewRecordToTable(String firstName, String lastName, String email, String age, String salary, String department) {
         logger.info("Step 1: click To Web Table tab");
         textBoxPageObject.clickToTabByTabName("Web Tables");
-        WebTablesPageObjects webTablesPageObjects = PageGeneratorManager.getWebTablesPageObjects(driver, wait);
 
         logger.info("Step 2: Click to Add button");
         webTablesPageObjects.clickToAddBtn();
@@ -94,10 +95,10 @@ public class ElementTestcases  extends SeleniumBaseTest {
         webTablesPageObjects.clickSubmitBtn();
 
         logger.info("Step 6: Verify new record is present in the table");
-        webTablesPageObjects.verifyNewRecordIsPresentInTheTable();
+        webTablesPageObjects.verifyNewRecordIsPresentInTheTable(email);
 
         logger.info("Step 7: Verify record details match input");
-        webTablesPageObjects.verifyRecordDetailsMatchWithInputData();
+        webTablesPageObjects.verifyRecordDetailsMatchWithInputData(firstName, lastName, email, age, salary, department);
     }
 
     @Test
