@@ -94,10 +94,13 @@ public class ElementTestcases  extends SeleniumBaseTest {
         logger.info("Step 5: Click to Submit button");
         webTablesPageObjects.clickSubmitBtn();
 
-        logger.info("Step 6: Verify new record is present in the table");
+        logger.info("step 6: search record");
+        webTablesPageObjects.seachRecordByText(email);
+
+        logger.info("Step 7: Verify new record is present in the table");
         webTablesPageObjects.verifyNewRecordIsPresentInTheTable(email);
 
-        logger.info("Step 7: Verify record details match input");
+        logger.info("Step 8: Verify record details match input");
         webTablesPageObjects.verifyRecordDetailsMatchWithInputData(firstName, lastName, email, age, salary, department);
     }
 

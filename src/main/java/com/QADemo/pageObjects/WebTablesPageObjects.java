@@ -3,6 +3,7 @@ package com.QADemo.pageObjects;
 import com.QADemo.Selenium.TextInputElement;
 import com.QADemo.Selenium.WebElementInteractions;
 import com.QADemo.pageUIs.WebTablesPageUIs;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,6 +17,10 @@ public class WebTablesPageObjects {
     private WebTablesPageUIs webTablesPageUIs;
     private WebElementInteractions webElementInteractions;
     private TextInputElement textInputElement;
+    public WebTablesPageObjects(){
+
+    }
+
     public WebTablesPageObjects(RemoteWebDriver driver, WebDriverWait wait){
         webTablesPageUIs = new WebTablesPageUIs(driver, wait);
         webElementInteractions = new WebElementInteractions(driver, wait);
@@ -28,7 +33,7 @@ public class WebTablesPageObjects {
                 {"Thao","Thi","thao@mail.vn","23","123456","AB"}
         };
     }
-    
+
     public void clickToAddBtn() {
         webElementInteractions.clickOnElement(webTablesPageUIs.addBtn());
     }
@@ -51,8 +56,14 @@ public class WebTablesPageObjects {
     }
 
     public void verifyNewRecordIsPresentInTheTable(String email) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(webTablesPageUIs.emailTxt(), email, "Email should match.");
     }
+
     public List<String> getAllDataOfRacordAdded(){
         ArrayList<String> addedRecord = new ArrayList<>();
         addedRecord.add(webTablesPageUIs.fisrtNameTxt());
@@ -72,5 +83,10 @@ public class WebTablesPageObjects {
         Assert.assertEquals(addedRecord.get(3), age, "Age should be match");
         Assert.assertEquals(addedRecord.get(4), salary, "Salary should be match");
         Assert.assertEquals(addedRecord.get(5), department, "Department should be match");
+    }
+
+    public void seachRecordByText(String email) {
+        webElementInteractions.clickOnElement(webTablesPageUIs.searchTBx());
+        textInputElement.sendKeysWithTab(webTablesPageUIs.searchTBx(), email);
     }
 }
