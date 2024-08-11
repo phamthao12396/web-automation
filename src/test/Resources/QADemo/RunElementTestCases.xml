@@ -43,13 +43,33 @@
 <!--    </test>-->
 <!--    -->
 
+<!--    <test name="Select Radio button">-->
+<!--        <classes>-->
+<!--            <class name="com.QADemo.ElementTestcases">-->
+<!--                <methods>-->
+<!--                    <include name="addNewRecordToTable"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
     <test name="Select Radio button">
+        <!--        <classes>-->
+        <!--            <class name="com.QADemo.ElementTestcases">-->
+        <!--                <methods>-->
+        <!--                    <include name="editRecord"/>-->
+        <!--                        <parameter name="editName" value="Tracy"/>-->
+        <!--                </methods>-->
+        <!--            </class>-->
+        <!--        </classes>-->
+
         <classes>
             <class name="com.QADemo.ElementTestcases">
-                <methods>
-                    <include name="addNewRecordToTable"/>
-                </methods>
+                <method name="editRecord">
+                    <parameter name="editName" value="John"/>
+                </method>
             </class>
+
         </classes>
     </test>
 

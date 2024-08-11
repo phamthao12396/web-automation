@@ -18,7 +18,6 @@ public class WebTablesPageObjects {
     private WebElementInteractions webElementInteractions;
     private TextInputElement textInputElement;
     public WebTablesPageObjects(){
-
     }
 
     public WebTablesPageObjects(RemoteWebDriver driver, WebDriverWait wait){
@@ -28,7 +27,7 @@ public class WebTablesPageObjects {
     }
 
     @DataProvider(name = "addNewRecord")
-    public Object[][] addNewRecord1(){
+    public Object[][] addNewRecord(){
         return new Object[][]{
                 {"Thao","Thi","thao@mail.vn","23","123456","AB"}
         };
@@ -88,5 +87,11 @@ public class WebTablesPageObjects {
     public void seachRecordByText(String email) {
         webElementInteractions.clickOnElement(webTablesPageUIs.searchTBx());
         textInputElement.sendKeysWithTab(webTablesPageUIs.searchTBx(), email);
+    }
+
+    public void editData(String editFirstName) {
+        webElementInteractions.clickOnElement(webTablesPageUIs.firstNameTBx());
+        textInputElement.clearElementText(webTablesPageUIs.firstNameTBx());
+        textInputElement.sendKeysWithTab(webTablesPageUIs.firstNameTBx(), editFirstName);
     }
 }
