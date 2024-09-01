@@ -104,8 +104,7 @@ public class ElementTestcases  extends SeleniumBaseTest {
         webTablesPageObjects.verifyRecordDetailsMatchWithInputData(firstName, lastName, email, age, salary, department);
     }
 
-    @Test(dataProvider = "addNewRecord", dataProviderClass = WebTablesPageObjects.class)
-    @Parameters({"editName"})
+    @Test(dataProvider = "editRecord", dataProviderClass = WebTablesPageObjects.class)
     public void editRecord(String firstName, String lastName, String email, String age, String salary, String department, String editName) {
         logger.info("Step 1: click To Web Table tab");
         textBoxPageObject.clickToTabByTabName("Web Tables");
@@ -149,8 +148,7 @@ public class ElementTestcases  extends SeleniumBaseTest {
 
 
     @Test
-    @Parameters("radioName")
-    public void deleteRecord(String radioName){
+    public void deleteRecord(){
 
     }
 

@@ -12,6 +12,8 @@ import org.testng.annotations.DataProvider;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.testng.Assert.assertEquals;
+
 public class WebTablesPageObjects {
     private final String POPUP_TITLE = "Registration Form";
     private WebTablesPageUIs webTablesPageUIs;
@@ -32,13 +34,19 @@ public class WebTablesPageObjects {
                 {"Thao","Thi","thao@mail.vn","23","123456","AB"}
         };
     }
+    @DataProvider(name = "editRecord")
+    public Object[][] editRecord(){
+        return new Object[][]{
+                {"Thao","Thi","thao@mail.vn","23","123456","AB", "KJHGG"}
+        };
+    }
 
     public void clickToAddBtn() {
         webElementInteractions.clickOnElement(webTablesPageUIs.addBtn());
     }
 
     public void verifyRegistrationFormDisplayed() {
-        Assert.assertEquals(webTablesPageUIs.registrationFormTitle(), POPUP_TITLE, "Registration Form should displayed.");
+        assertEquals(webTablesPageUIs.registrationFormTitle(), POPUP_TITLE, "Registration Form should displayed.");
     }
 
     public void enterDataToRegistrationForm(String firstName, String lastName, String email, String age, String salary, String department) {
@@ -60,7 +68,7 @@ public class WebTablesPageObjects {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Assert.assertEquals(webTablesPageUIs.emailTxt(), email, "Email should match.");
+        assertEquals(webTablesPageUIs.emailTxt(), email, "Email should match.");
     }
 
     public List<String> getAllDataOfRacordAdded(){
@@ -76,12 +84,12 @@ public class WebTablesPageObjects {
 
     public void verifyRecordDetailsMatchWithInputData(String firstName, String lastName, String email, String age, String salary, String department) {
         List<String> addedRecord = getAllDataOfRacordAdded();
-        Assert.assertEquals(addedRecord.get(0), firstName, "FirstName should be match");
-        Assert.assertEquals(addedRecord.get(1), lastName, "Last name should be match");
-        Assert.assertEquals(addedRecord.get(2), email, "Email should be match");
-        Assert.assertEquals(addedRecord.get(3), age, "Age should be match");
-        Assert.assertEquals(addedRecord.get(4), salary, "Salary should be match");
-        Assert.assertEquals(addedRecord.get(5), department, "Department should be match");
+        assertEquals(addedRecord.get(0), firstName, "FirstName should be match");
+        assertEquals(addedRecord.get(1), lastName, "Last name should be match");
+        assertEquals(addedRecord.get(2), email, "Email should be match");
+        assertEquals(addedRecord.get(3), age, "Age should be match");
+        assertEquals(addedRecord.get(4), salary, "Salary should be match");
+        assertEquals(addedRecord.get(5), department, "Department should be match");
     }
 
     public void seachRecordByText(String email) {

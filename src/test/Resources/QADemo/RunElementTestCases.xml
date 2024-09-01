@@ -6,68 +6,61 @@
     <parameter name="url" value="https://demoqa.com/"/>
     <parameter name="timeout" value="30"/>
 
-<!--    <test name="Input TextBox">
-        <classes>
-            <class name="com.QADemo.ElementTestcases">
-                <methods>
-                    <include name="textBox"/>
-                        <parameter name="fullName" value="Name A"/>
-                        <parameter name="email" value="mrsA@kim.vn"/>
-                        <parameter name="currentAddress" value="103 Nguyen The Truyen"/>
-                        <parameter name="permanentAddress" value="12 Tan son nhi"/>
-                </methods>
-            </class>
-        </classes>
-    </test>-->
+    <!--    <test name="Input TextBox">
+            <classes>
+                <class name="com.QADemo.ElementTestcases">
+                    <methods>
+                        <include name="textBox"/>
+                            <parameter name="fullName" value="Name A"/>
+                            <parameter name="email" value="mrsA@kim.vn"/>
+                            <parameter name="currentAddress" value="103 Nguyen The Truyen"/>
+                            <parameter name="permanentAddress" value="12 Tan son nhi"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>-->
 
-<!--    <test name="Select Checkbox">
-        <classes>
-            <class name="com.QADemo.ElementTestcases">
-                <methods>
-                    <include name="clickToCheckBox"/>
-                    <parameter name="checkboxName" value="Private" />
-                </methods>
-            </class>
-        </classes>
-    </test>-->
+    <!--    <test name="Select Checkbox">
+            <classes>
+                <class name="com.QADemo.ElementTestcases">
+                    <methods>
+                        <include name="clickToCheckBox"/>
+                        <parameter name="checkboxName" value="Private" />
+                    </methods>
+                </class>
+            </classes>
+        </test>-->
 
-<!--    <test name="Select Radio button">-->
-<!--        <classes>-->
-<!--            <class name="com.QADemo.ElementTestcases">-->
-<!--                <methods>-->
-<!--                    <include name="radioButton"/>-->
-<!--                    <parameter name="radioName" value="Impressive" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    -->
+    <!--    <test name="Select Radio button">-->
+    <!--        <classes>-->
+    <!--            <class name="com.QADemo.ElementTestcases">-->
+    <!--                <methods>-->
+    <!--                    <include name="radioButton"/>-->
+    <!--                    <parameter name="radioName" value="Impressive" />-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    -->
 
-<!--    <test name="Select Radio button">-->
-<!--        <classes>-->
-<!--            <class name="com.QADemo.ElementTestcases">-->
-<!--                <methods>-->
-<!--                    <include name="addNewRecordToTable"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    <test name="Select Radio button">-->
+    <!--        <classes>-->
+    <!--            <class name="com.QADemo.ElementTestcases">-->
+    <!--                <methods>-->
+    <!--                    <include name="addNewRecordToTable"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
 
     <test name="Select Radio button">
-        <!--        <classes>-->
-        <!--            <class name="com.QADemo.ElementTestcases">-->
-        <!--                <methods>-->
-        <!--                    <include name="editRecord"/>-->
-        <!--                        <parameter name="editName" value="Tracy"/>-->
-        <!--                </methods>-->
-        <!--            </class>-->
-        <!--        </classes>-->
 
         <classes>
             <class name="com.QADemo.ElementTestcases">
-                <method name="editRecord">
-                    <parameter name="editName" value="John"/>
-                </method>
+                <methods>
+                    <include name="editRecord"/>
+
+                </methods>
             </class>
 
         </classes>
