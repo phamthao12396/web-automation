@@ -88,4 +88,8 @@ public class WebTablesPageUIs {
     public WebElement deleteRecordBtn(){
         return webElementWaits.waitForElementClickableByXpath("//div[@class='rt-tbody']//div[@class='rt-tr -odd']//div[@class='action-buttons']/span[@title='Delete']");
     }
+
+    public WebElement waitForRecordDisplayed(){
+        return webElementWaits.waitForElementVisibleByXpath("//div[text()='Email']/ancestor::div[@class='rt-table']//div[@class='rt-tbody']//div[4]");
+    }
 }

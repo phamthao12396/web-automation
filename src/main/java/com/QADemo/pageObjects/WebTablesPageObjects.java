@@ -2,6 +2,7 @@ package com.QADemo.pageObjects;
 
 import com.QADemo.Selenium.TextInputElement;
 import com.QADemo.Selenium.WebElementInteractions;
+import com.QADemo.Selenium.WebElementWaits;
 import com.QADemo.pageUIs.WebTablesPageUIs;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -19,6 +20,7 @@ public class WebTablesPageObjects {
     private WebTablesPageUIs webTablesPageUIs;
     private WebElementInteractions webElementInteractions;
     private TextInputElement textInputElement;
+    private WebElementWaits webElementWaits;
     public WebTablesPageObjects(){
     }
 
@@ -26,6 +28,7 @@ public class WebTablesPageObjects {
         webTablesPageUIs = new WebTablesPageUIs(driver, wait);
         webElementInteractions = new WebElementInteractions(driver, wait);
         textInputElement = new TextInputElement(driver, wait);
+        webElementWaits = new WebElementWaits(wait);
     }
 
     @DataProvider(name = "addNewRecord")
@@ -63,11 +66,7 @@ public class WebTablesPageObjects {
     }
 
     public void verifyNewRecordIsPresentInTheTable(String email) {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         assertEquals(webTablesPageUIs.emailTxt(), email, "Email should match.");
     }
 
@@ -94,12 +93,21 @@ public class WebTablesPageObjects {
 
     public void seachRecordByText(String email) {
         webElementInteractions.clickOnElement(webTablesPageUIs.searchTBx());
-        textInputElement.sendKeysWithTab(webTablesPageUIs.searchTBx(), email);
+        textInputElement.sendKeysWithClearAndTab(webTablesPageUIs.searchTBx(), email);
     }
 
     public void editData(String editFirstName) {
         webElementInteractions.clickOnElement(webTablesPageUIs.firstNameTBx());
         textInputElement.clearElementText(webTablesPageUIs.firstNameTBx());
         textInputElement.sendKeysWithTab(webTablesPageUIs.firstNameTBx(), editFirstName);
+    }
+
+    public void clickToEditBtn() {
+        webElementInteractions.clickOnElement(webTablesPageUIs.editRecordBtn());
+    }
+
+    public void deleteRecord(String email) {
+        assertEquals(webElementInteractions.getTextFromWebElement(webTablesPageUIs.waitForRecordDisplayed()), email);
+        webElementInteractions.clickOnElement(webTablesPageUIs.waitForRecordDisplayed());
     }
 }

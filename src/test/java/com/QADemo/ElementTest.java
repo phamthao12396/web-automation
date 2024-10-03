@@ -9,7 +9,7 @@ import com.QADemo.pageObjects.WebTablesPageObjects;
 import org.testng.annotations.*;
 import com.QADemo.pageObjects.TextBoxPageObjects;
 
-public class ElementTestcases  extends SeleniumBaseTest {
+public class ElementTest  extends SeleniumBaseTest {
     TextBoxPageObjects textBoxPageObject;
     MenuNavigation navigation;
     private WebTablesPageObjects webTablesPageObjects;
@@ -130,7 +130,10 @@ public class ElementTestcases  extends SeleniumBaseTest {
         logger.info("Step 8: Verify record details match input");
         webTablesPageObjects.verifyRecordDetailsMatchWithInputData(firstName, lastName, email, age, salary, department);
 
-        logger.info("Step 9: Edit data");
+        logger.info("Step 9.1: click Edit button");
+        webTablesPageObjects.clickToEditBtn();
+
+        logger.info("Step 9.2: Edit data");
         webTablesPageObjects.editData(editName);
 
         logger.info("Step 10: Click to Submit button");
@@ -147,9 +150,34 @@ public class ElementTestcases  extends SeleniumBaseTest {
     }
 
 
-    @Test
-    public void deleteRecord(){
+    @Test(dataProvider = "addNewRecord", dataProviderClass = WebTablesPageObjects.class)
+    public void deleteRecord(String firstName, String lastName, String email, String age, String salary, String department){
+        logger.info("Step 1: click To Web Table tab");
+        textBoxPageObject.clickToTabByTabName("Web Tables");
 
+        logger.info("Step 2: Click to Add button");
+        webTablesPageObjects.clickToAddBtn();
+
+        logger.info("Step 3: Verify the Registration Form displayed");
+        webTablesPageObjects.verifyRegistrationFormDisplayed();
+
+        logger.info("Step 4: Enter data to all field");
+        webTablesPageObjects.enterDataToRegistrationForm(firstName, lastName, email, age, salary, department);
+
+        logger.info("Step 5: Click to Submit button");
+        webTablesPageObjects.clickSubmitBtn();
+
+        logger.info("step 6: search record");
+        webTablesPageObjects.seachRecordByText(email);
+
+        logger.info("Step 7: Verify new record is present in the table");
+        webTablesPageObjects.verifyNewRecordIsPresentInTheTable(email);
+
+        logger.info("Step 8: Verify record details match input");
+        webTablesPageObjects.verifyRecordDetailsMatchWithInputData(firstName, lastName, email, age, salary, department);
+
+        logger.info("step 9: Delete record");
+        webTablesPageObjects.deleteRecord(email);
     }
 
     @AfterTest

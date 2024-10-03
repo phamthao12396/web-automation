@@ -53,12 +53,25 @@
     <!--        </classes>-->
     <!--    </test>-->
 
+<!--    <test name="Select Radio button">-->
+
+<!--        <classes>-->
+<!--            <class name="com.QADemo.ElementTest">-->
+<!--                <methods>-->
+<!--                    <include name="editRecord"/>-->
+
+<!--                </methods>-->
+<!--            </class>-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
     <test name="Select Radio button">
 
         <classes>
-            <class name="com.QADemo.ElementTestcases">
+            <class name="com.QADemo.ElementTest">
                 <methods>
-                    <include name="editRecord"/>
+                    <include name="deleteRecord"/>
 
                 </methods>
             </class>

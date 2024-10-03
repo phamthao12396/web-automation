@@ -58,4 +58,16 @@ public class TextInputElement {
         sendKeys(element,value);
         pressKeys(element, Keys.TAB);
     }
+
+    /**
+     * method to send given Keys with tab and clear
+     *
+     * @param  value to send
+     * @param  element textbox
+     */
+    public void sendKeysWithClearAndTab(WebElement element, String value) {
+        clearElementText(element);
+        sendKeys(element,value);
+        pressKeys(element, Keys.TAB);
+    }
 }
