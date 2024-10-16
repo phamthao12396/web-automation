@@ -15,8 +15,8 @@ public class Navigation {
         registerPageUIs = new RegisterPageUIs(driver, wait);
     }
 
-    public RegisterPageObject navigateToRegisterPage(){
+    public RegisterPageObject navigateToRegisterPage(RemoteWebDriver driver, WebDriverWait wait){
         webElementInteractions.clickOnElement(registerPageUIs.registerBtn_header());
-        return new RegisterPageObject();
+        return new RegisterPageObject(driver, wait);
     }
 }
