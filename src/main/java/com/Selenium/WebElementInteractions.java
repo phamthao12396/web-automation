@@ -1,6 +1,7 @@
-package com.QADemo.Selenium;
+package com.Selenium;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -75,5 +76,9 @@ public class WebElementInteractions {
         return getAttributeFromWebElement(inputElement, "value");
     }
 
+    public void scrollToElement(WebElement element){
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 
 }

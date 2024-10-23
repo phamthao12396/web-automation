@@ -1,13 +1,11 @@
 package com.QADemo.pageObjects;
 
-import com.QADemo.Selenium.TextInputElement;
-import com.QADemo.Selenium.WebElementInteractions;
-import com.QADemo.Selenium.WebElementWaits;
+import com.Selenium.TextInputElement;
+import com.Selenium.WebElementInteractions;
+import com.Selenium.WebElementWaits;
 import com.QADemo.pageUIs.WebTablesPageUIs;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 import java.util.ArrayList;

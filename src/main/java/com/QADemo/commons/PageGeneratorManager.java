@@ -1,6 +1,6 @@
 package com.QADemo.commons;
 
-import com.QADemo.Selenium.WebElementWaits;
+import com.Selenium.WebElementWaits;
 import com.QADemo.pageObjects.CheckBoxPageObjects;
 import com.QADemo.pageObjects.RadioPageObjects;
 import com.QADemo.pageObjects.TextBoxPageObjects;

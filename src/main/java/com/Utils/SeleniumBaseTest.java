@@ -1,6 +1,6 @@
-package Utils;
+package com.Utils;
 
-import com.QADemo.Selenium.*;
+import com.Selenium.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-import java.net.MalformedURLException;
 import java.time.Duration;
 
 

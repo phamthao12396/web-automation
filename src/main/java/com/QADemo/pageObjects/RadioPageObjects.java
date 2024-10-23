@@ -1,7 +1,7 @@
 package com.QADemo.pageObjects;
 
-import com.QADemo.Selenium.WebDriverInteractions;
-import com.QADemo.Selenium.WebElementInteractions;
+import com.Selenium.WebDriverInteractions;
+import com.Selenium.WebElementInteractions;
 import com.QADemo.pageUIs.RadioPageUIs;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

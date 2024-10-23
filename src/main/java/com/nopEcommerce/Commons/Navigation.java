@@ -1,7 +1,6 @@
 package com.nopEcommerce.Commons;
 
-import com.QADemo.Selenium.WebElementInteractions;
-import com.QADemo.Selenium.WebElementWaits;
+import com.Selenium.WebElementInteractions;
 import com.nopEcommerce.pageObjects.RegisterPageObject;
 import com.nopEcommerce.pageUIs.RegisterPageUIs;
 import org.openqa.selenium.remote.RemoteWebDriver;

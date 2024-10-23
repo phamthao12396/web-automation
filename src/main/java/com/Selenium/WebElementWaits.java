@@ -1,4 +1,4 @@
-package com.QADemo.Selenium;
+package com.Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -39,5 +39,13 @@ public class WebElementWaits {
     }
     public Boolean waitForElementInvisibleById(String id){
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(id)));
+    }
+
+    public WebElement waitForElementPresentByXpath(String xpath){
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+    }
+
+    public  WebElement waitForElementPresentById(String id){
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(id)));
     }
 }

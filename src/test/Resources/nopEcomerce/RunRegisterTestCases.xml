@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="false" name="Register">
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://localhost/"/>
+    <parameter name="timeout" value="30"/>
+
+
+    <test name="Register with empty data">
+        <classes>
+            <class name="com.nopEcommerce.RegisterTest">
+                <methods>
+                    <include name="registerWithPassWordLessThan6Characters"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

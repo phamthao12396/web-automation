@@ -1,4 +1,4 @@
-package com.QADemo.Selenium;
+package com.Selenium;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

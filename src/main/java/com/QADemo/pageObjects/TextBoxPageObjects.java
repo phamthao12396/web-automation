@@ -1,8 +1,8 @@
 package com.QADemo.pageObjects;
 
-import com.QADemo.Selenium.TextInputElement;
-import com.QADemo.Selenium.WebDriverInteractions;
-import com.QADemo.Selenium.WebElementInteractions;
+import com.Selenium.TextInputElement;
+import com.Selenium.WebDriverInteractions;
+import com.Selenium.WebElementInteractions;
 import com.QADemo.commons.PageGeneratorManager;
 import com.QADemo.pageUIs.TextBoxPageUIs;
 import org.apache.log4j.Logger;

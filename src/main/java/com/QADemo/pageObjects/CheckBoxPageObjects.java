@@ -1,17 +1,15 @@
 package com.QADemo.pageObjects;
 
-import com.QADemo.Selenium.CheckboxElement;
-import com.QADemo.Selenium.WebDriverInteractions;
-import com.QADemo.Selenium.WebElementInteractions;
-import com.QADemo.Selenium.WebElementWaits;
+import com.Selenium.CheckboxElement;
+import com.Selenium.WebDriverInteractions;
+import com.Selenium.WebElementInteractions;
+import com.Selenium.WebElementWaits;
 import com.QADemo.pageUIs.CheckBoxPageUIs;
 import com.QADemo.pageUIs.TextBoxPageUIs;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.time.Duration;
 
 
 public class CheckBoxPageObjects {

@@ -1,6 +1,6 @@
 package com.QADemo;
 
-import Utils.SeleniumBaseTest;
+import com.Utils.SeleniumBaseTest;
 import com.QADemo.commons.MenuNavigation;
 import com.QADemo.commons.PageGeneratorManager;
 import com.QADemo.pageObjects.CheckBoxPageObjects;
