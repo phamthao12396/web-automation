@@ -42,6 +42,13 @@ public class RegisterPageObject {
         };
     }
 
+    @DataProvider(name = "RegisterWithPasswordNotMatch")
+    public Object[][] passwordNotMatch(){
+        return new Object[][]{
+                {"Thi", "Pham", "test@gmail.vn", "123456", "123455"}
+        };
+    }
+
     public void verifyRegisterPageDisplayed() {
         Assert.assertEquals(registerPageUIs.registerText(), "Register");
     }
@@ -79,5 +86,9 @@ public class RegisterPageObject {
     }
 
     public void verifyPasswordLessThan6ErrorMessageDisplay() {
+    }
+
+    public void verifyPasswordNotMatchErrorMessageDisplay() {
+        Assert.assertEquals(registerPageUIs.passwordNotMatch(), "The password and confirmation password do not match.", "Error message should match");
     }
 }

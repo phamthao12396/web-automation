@@ -100,4 +100,24 @@ public class RegisterTest extends SeleniumBaseTest {
         logger.info("Step 2.1: Verify error messages displayed");
         registerPageObject.verifyPasswordLessThan6ErrorMessageDisplay();
     }
+
+    @Test(dataProvider = "RegisterWithPasswordNotMatch", dataProviderClass = RegisterPageObject.class)
+    public void registerWithConfirmPasswordNotMatch(String firstName, String lastname, String email, String pass, String confirmPass){
+        logger.info("Step 1: Click to Register link");
+        RegisterPageObject registerPageObject = navigation.navigateToRegisterPage(driver, wait);
+
+        logger.info("Step 1.1: Verify Register page displayed");
+        registerPageObject.verifyRegisterPageDisplayed();
+
+        logger.info("Input valid data to register");
+        registerPageObject.inputDataToRegisterForm(firstName, lastname, email, pass, confirmPass);
+
+        logger.info("Step 2: Click to Register button");
+        registerPageObject.clickToRegisterButton();
+
+        logger.info("Step 2.1: Verify error messages displayed");
+        registerPageObject.verifyPasswordNotMatchErrorMessageDisplay();
+    }
+
+    
 }

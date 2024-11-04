@@ -11,7 +11,7 @@
         <classes>
             <class name="com.nopEcommerce.RegisterTest">
                 <methods>
-                    <include name="registerWithPassWordLessThan6Characters"/>
+                    <include name="registerWithConfirmPasswordNotMatch"/>
                 </methods>
             </class>
 

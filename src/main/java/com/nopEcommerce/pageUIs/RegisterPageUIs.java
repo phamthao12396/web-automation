@@ -77,4 +77,8 @@ public class RegisterPageUIs {
     public String passwordLessThan6CharactersErrorMessage(){
         return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementVisibleByXpath("//input[@id='Password']/parent::div//span[@class='field-validation-error']"));
     }
+
+    public String passwordNotMatch(){
+        return webElementInteractions.getTextFromWebElement(webElementWaits.waitForElementPresentById("ConfirmPassword-error"));
+    }
 }
